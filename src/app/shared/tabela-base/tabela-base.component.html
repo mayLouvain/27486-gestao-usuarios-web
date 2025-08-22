@@ -1,0 +1,80 @@
+<div class="tabela-container">
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Filtrar</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Filtrar"
+    />
+  </mat-form-field>
+
+  <!-- Desktop -->
+  <ng-container *ngIf="!(isMobile$ | async)">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      class="mat-elevation-z8 full-width-table"
+    >
+      <ng-container *ngFor="let coluna of colunas" [matColumnDef]="coluna">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ coluna | titlecase }}
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element[coluna] }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes" *ngIf="acoesBotoes.length">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+            *ngFor="let acao of acoesBotoes"
+            (click)="acao.callback(element); $event.stopPropagation()"
+            [matTooltip]="acao.nomeBotao"
+            [attr.aria-label]="acao.ariaNome"
+          >
+            <mat-icon *ngIf="acao.iconeBotao">{{ acao.iconeBotao }}</mat-icon>
+            <span *ngIf="!acao.iconeBotao">{{ acao.nomeBotao }}</span>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="colunasTabelaTela"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: colunasTabelaTela"
+        class="linha-click"
+        (click)="detalheLinhaAcao?.callback(row)"
+        ></tr>
+      </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </ng-container>
+
+  <!-- Mobile -->
+  <ng-container *ngIf="isMobile$ | async">
+    <mat-card *ngFor="let element of dataSource.filteredData" class="card-item linha-click">
+      <mat-card-content>
+        <div *ngFor="let coluna of colunas">
+          <strong>{{ coluna | titlecase }}:</strong> {{ element[coluna] }}
+        </div>
+        <div class="acoes" *ngIf="acoesBotoes.length">
+          <button
+            mat-icon-button
+            *ngFor="let acao of acoesBotoes"
+            (click)="acao.callback(element)"
+            [matTooltip]="acao.nomeBotao"
+            [attr.aria-label]="acao.ariaNome"
+          >
+            <mat-icon *ngIf="acao.iconeBotao">{{ acao.iconeBotao }}</mat-icon>
+            <span *ngIf="!acao.iconeBotao">{{ acao.nomeBotao }}</span>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

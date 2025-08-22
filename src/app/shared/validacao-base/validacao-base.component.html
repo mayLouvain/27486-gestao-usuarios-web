@@ -1,0 +1,5 @@
+<mat-error *ngIf="mostrarErros" [id]="idCampo + '-erros'">
+  <small *ngFor="let msg of erros" aria-live="polite">
+    {{ msg }}
+  </small>
+</mat-error>

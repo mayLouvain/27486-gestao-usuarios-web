@@ -1,0 +1,13 @@
+<div class="form-container-detalhe">
+  <mat-card *ngFor="let campo of campos" class="form-card">
+    <mat-card-title>{{ campo.nome }}</mat-card-title>
+    <mat-card-content>
+      {{ getValorFormatado(campo) }}
+    </mat-card-content>
+  </mat-card>
+
+  <div class="form-actions">
+    <button mat-raised-button [color]="'primary'" [type]="'button'" (click)="fechar()" >
+      Fechar
+    </button>
+  </div>

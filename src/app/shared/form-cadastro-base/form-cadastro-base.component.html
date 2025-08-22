@@ -1,0 +1,50 @@
+<div class="form-container">
+  <mat-card class="form-card">
+    <mat-card-content>
+      <form *ngIf="form" [formGroup]="form">
+
+        <mat-grid-list [cols]="gridCols" gutterSize="16px">
+          <mat-grid-tile *ngFor="let campo of camposForm" [colspan]="calcularColpan(campo)">
+
+            <mat-form-field *ngIf="campo.tipo === 'text' || campo.tipo === 'number'" class="full-width" >
+              <mat-label>{{ campo.nome }}</mat-label>
+              <input matInput [type]="campo.tipo" [formControlName]="campo.id" [attr.aria-label]="campo.ariaNome" [attr.aria-describedby]="campo.id + '-erros'"
+                [value]="tranformarCampoComPipe(campo, form.get(campo.id)?.value)"
+                (input)="form.get(campo.id)?.setValue($any($event.target).value)" />
+              <app-validacao-base [campoForm]="form.get(campo.id)" [mensagens]="campo.validacoes || []" [idCampo]="campo.id">
+              </app-validacao-base>
+            </mat-form-field>
+
+            <div class="checkbox-wrapper">
+              <mat-checkbox aria-label="{{campo.ariaNome}}" *ngIf="campo.tipo === 'checkbox'" [formControlName]="campo.id" class="checkbox-field">
+                {{ campo.nome }}
+              </mat-checkbox>
+              <app-validacao-base *ngIf="campo.tipo === 'checkbox'" [campoForm]="form.get(campo.id)"
+                [mensagens]="campo.validacoes || []">
+              </app-validacao-base>
+            </div>
+
+            <mat-form-field *ngIf="campo.tipo === 'select'" class="full-width">
+              <mat-label>{{ campo.nome }} </mat-label>
+              <mat-select [formControlName]="campo.id">
+                <mat-option *ngFor="let opt of campo.opcoes" [value]="opt.valor">
+                  {{ opt.nome }}
+                </mat-option>
+              </mat-select>
+              <app-validacao-base [campoForm]="form.get(campo.id)" [mensagens]="campo.validacoes || []">
+              </app-validacao-base>
+            </mat-form-field>
+
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <div class="form-actions">
+          <button *ngFor="let acao of acoesForm" mat-raised-button [color]="acao.cor || 'primary'"
+            [type]="acao.tipo || 'button'" [disabled]="isDisabled(acao)" (click)="executarAcao(acao)">
+            {{ acao.nome }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

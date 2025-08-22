@@ -1,0 +1,46 @@
+.tabela-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+
+  .full-width-table {
+    width: 100%;
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  .filter-field {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+
+  .card-item {
+    margin-bottom: 1rem;
+  }
+
+  .acoes {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .linha-click {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .linha-click:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }

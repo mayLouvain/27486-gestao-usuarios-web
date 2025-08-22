@@ -1,0 +1,36 @@
+.form-container-detalhe {
+  width: 100%;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  margin: 10px;
+}
+
+.mat-card-title {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.mat-card-content {
+  padding-top: 0;
+  color: rgba(0,0,0,0.87);
+  font-size: 14px;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 600px) {
+  mat-grid-list {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  gap: 8px;
+}

@@ -1,0 +1,42 @@
+mat-toolbar {
+  position: sticky;
+  // background-color: skyblue;
+  top: 0;
+  z-index: 1000;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+a.active {
+  font-weight: bold;
+  border-bottom: 2px solid yellow;
+}
+nav a {
+  margin-left: 0.5rem;
+}
+.content {
+  padding: 16px;
+}
+.sidenav-container {
+  height: 100%;
+}
+.sidenav {
+  width: 200px;
+  border-radius: 0;
+  padding-inline: 1rem;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
