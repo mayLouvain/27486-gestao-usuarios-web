@@ -7,7 +7,7 @@ export class NomeFormatadoPipe implements PipeTransform {
     return valor
       .toLowerCase()
       .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((palavra) => palavra.charAt(0).toUpperCase() + palavra.slice(1))
       .join(' ');
   }
 }

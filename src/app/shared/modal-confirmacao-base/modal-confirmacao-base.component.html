@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>{{ data.titulo || 'Confirmação' }}</h2>
+<h2 mat-dialog-title>{{ data.titulo || "Confirmação" }}</h2>
 
 <mat-dialog-content>
   <p>{{ data.mensagem }}</p>
@@ -9,15 +9,17 @@
     mat-button
     (click)="cancelar()"
     cdkFocusInitial
-    aria-nome="Cancelar ação">
-    {{ data.textoCancelar || 'Cancelar' }}
+    aria-label="Cancelar ação"
+  >
+    {{ data.textoCancelar || "Cancelar" }}
   </button>
 
   <button
     mat-raised-button
     color="primary"
     (click)="confirmar()"
-    aria-nome="Confirmar ação">
-    {{ data.textoConfirmar || 'Confirmar' }}
+    aria-label="Confirmar ação"
+  >
+    {{ data.textoConfirmar || "Confirmar" }}
   </button>
 </mat-dialog-actions>

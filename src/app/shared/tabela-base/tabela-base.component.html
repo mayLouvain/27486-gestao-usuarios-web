@@ -1,12 +1,7 @@
 <div class="tabela-container">
-
   <mat-form-field appearance="outline" class="filter-field">
     <mat-label>Filtrar</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      placeholder="Filtrar"
-    />
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar" />
   </mat-form-field>
 
   <!-- Desktop -->
@@ -46,8 +41,8 @@
         *matRowDef="let row; columns: colunasTabelaTela"
         class="linha-click"
         (click)="detalheLinhaAcao?.callback(row)"
-        ></tr>
-      </table>
+      ></tr>
+    </table>
 
     <mat-paginator
       [pageSizeOptions]="[5, 10, 20]"
@@ -57,7 +52,10 @@
 
   <!-- Mobile -->
   <ng-container *ngIf="isMobile$ | async">
-    <mat-card *ngFor="let element of dataSource.filteredData" class="card-item linha-click">
+    <mat-card
+      *ngFor="let element of dataSource.filteredData"
+      class="card-item linha-click"
+    >
       <mat-card-content>
         <div *ngFor="let coluna of colunas">
           <strong>{{ coluna | titlecase }}:</strong> {{ element[coluna] }}

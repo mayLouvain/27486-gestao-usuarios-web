@@ -1,9 +1,8 @@
-import { FormGroup } from "@angular/forms";
-
+import { FormGroup } from '@angular/forms';
 
 export enum Status {
-    ATIVO = 'ATIVO',
-    INATIVO = 'INATIVO'
+  ATIVO = 'ATIVO',
+  INATIVO = 'INATIVO',
 }
 
 export type TipoCampo =
@@ -27,21 +26,20 @@ export interface CampoBaseConfig {
   nome: string;
   valor?: any;
   pipe?: string;
-  cols?: number
+  cols?: number;
   ariaNome: string;
 }
 
 export interface CampoFormCadastroConfig extends CampoBaseConfig {
   tipo: TipoCampo;
   obrigatorio: boolean;
-  fullWidthMobile: boolean,
+  fullWidthMobile: boolean;
   opcoes?: ItensOpcoes[];
   validacoes?: ValidacaoConfig[];
-  mapaValores?: Status[]
+  mapaValores?: Status[];
 }
 
-export interface CampoFormDetalheConfig extends CampoBaseConfig{
-}
+export interface CampoFormDetalheConfig extends CampoBaseConfig {}
 
 export interface ValidacaoConfig {
   tipo: string;
@@ -56,4 +54,3 @@ export interface AcaoFormConfig {
   callback: (form?: any) => void;
   disabledConditionally?: boolean | ((form: FormGroup) => boolean);
 }
-

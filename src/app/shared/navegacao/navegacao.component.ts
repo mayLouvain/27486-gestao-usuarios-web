@@ -5,14 +5,14 @@ import { map, Observable } from 'rxjs';
 @Component({
   selector: 'app-navegacao',
   templateUrl: './navegacao.component.html',
-  styleUrls: ['./navegacao.component.scss']
+  styleUrls: ['./navegacao.component.scss'],
 })
 export class NavegacaoComponent {
-
- isHandset$: Observable<boolean>;
+  isHandset$: Observable<boolean>;
 
   constructor(private breakpointObserver: BreakpointObserver) {
-    this.isHandset$ = this.breakpointObserver.observe(Breakpoints.Handset)
-      .pipe(map(result => result.matches));
+    this.isHandset$ = this.breakpointObserver
+      .observe(Breakpoints.Handset)
+      .pipe(map((result) => result.matches));
   }
 }

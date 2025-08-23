@@ -5,7 +5,6 @@ export interface BotaoAcao {
   callback: (acaoBotao: any) => void;
 }
 
-
 export interface DetalheLinhaAcao {
   callback?: (acaoBotao: any) => void;
 }

@@ -9,8 +9,7 @@
   >
     <mat-toolbar style="font-weight: 800">
       <mat-icon
-        aria-hidden="false"
-        aria-nome="Example home icon"
+        aria-label="Ícone Controle"
         fontIcon="space_dashboard"
       ></mat-icon>
       Controle
@@ -30,7 +29,7 @@
             routerLinkActive="active"
             >Listar</a
           >
-          <a mat-list-item  routerLink="/usuarios/cadastrar" >Cadastrar</a>
+          <a mat-list-item routerLink="/usuarios/cadastrar">Cadastrar</a>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
@@ -41,11 +40,11 @@
       @if (isHandset$ | async) {
         <button
           tipo="button"
-          aria-nome="Toggle sidenav"
+          aria-label="Toggle sidenav"
           mat-icon-button
           (click)="menu.toggle()"
         >
-          <mat-icon aria-nome="Side nav toggle icon">menu</mat-icon>
+          <mat-icon aria-label="Menu">menu</mat-icon>
         </button>
       }
     </mat-toolbar>

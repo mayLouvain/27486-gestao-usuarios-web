@@ -32,7 +32,7 @@ import { ModalConfirmacaoBaseComponent } from './modal-confirmacao-base/modal-co
     RouterModule,
     LayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     EmailFormatadoPipe,
@@ -43,7 +43,7 @@ import { ModalConfirmacaoBaseComponent } from './modal-confirmacao-base/modal-co
     NavegacaoComponent,
     NomeFormatadoPipe,
     TabelaBaseComponent,
-    ValidacaoBaseComponent
-  ]
+    ValidacaoBaseComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

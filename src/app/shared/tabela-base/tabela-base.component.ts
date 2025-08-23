@@ -1,19 +1,24 @@
 import { DetalheLinhaAcao } from './../models/tabela.model';
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { BotaoAcao} from '../models/tabela.model';
+import { BotaoAcao } from '../models/tabela.model';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tabela-base',
   templateUrl: './tabela-base.component.html',
-  styleUrl: './tabela-base.component.scss'
+  styleUrl: './tabela-base.component.scss',
 })
-export class TabelaBaseComponent  implements OnInit, AfterViewInit {
-
+export class TabelaBaseComponent implements OnInit, AfterViewInit {
   @Input() dados: any[] = [];
   @Input() colunas: any[] = [];
   @Input() acoesBotoes: BotaoAcao[] = [];
@@ -27,8 +32,9 @@ export class TabelaBaseComponent  implements OnInit, AfterViewInit {
   isMobile$: Observable<boolean>;
 
   constructor(private breakpointObserver: BreakpointObserver) {
-    this.isMobile$ = this.breakpointObserver.observe([Breakpoints.Handset])
-    .pipe(map((result: { matches: any; }) => result.matches));
+    this.isMobile$ = this.breakpointObserver
+      .observe([Breakpoints.Handset])
+      .pipe(map((result: { matches: any }) => result.matches));
   }
 
   ngOnInit(): void {
@@ -53,4 +59,3 @@ export class TabelaBaseComponent  implements OnInit, AfterViewInit {
     return this.colunas.concat(this.acoesBotoes.length ? ['acoes'] : []);
   }
 }
-

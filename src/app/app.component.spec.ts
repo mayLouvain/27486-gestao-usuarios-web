@@ -14,16 +14,12 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  // it(`should have the '27486-gestao-usuarios-web' title`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.componentInstance;
-  //   expect(app.title).toEqual('27486-gestao-usuarios-web');
-  // });
-
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, 27486-gestao-usuarios-web');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, 27486-gestao-usuarios-web',
+    );
   });
 });

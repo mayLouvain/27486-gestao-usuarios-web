@@ -3,44 +3,42 @@
   overflow-x: auto;
 }
 
+.full-width-table {
+  width: 100%;
+}
 
+.table-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
 
-  .full-width-table {
-    width: 100%;
-  }
+table {
+  width: 100%;
+  min-width: 600px;
+}
 
-  .table-header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 8px;
-  }
+.filter-field {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
 
-  table {
-    width: 100%;
-    min-width: 600px;
-  }
+.card-item {
+  margin-bottom: 1rem;
+}
 
-  .filter-field {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1rem;
-  }
+.acoes {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
 
-  .card-item {
-    margin-bottom: 1rem;
-  }
+.linha-click {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-  .acoes {
-    margin-top: 0.5rem;
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .linha-click {
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-
-  .linha-click:hover {
-    background-color: rgba(0, 0, 0, 0.04);
-  }
+.linha-click:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
