@@ -1,0 +1,20 @@
+.visualizacao-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // duas colunas
+  gap: 12px 24px;
+}
+
+.visualizacao-item {
+  display: flex;
+  flex-direction: column;
+}
+
+strong {
+  font-size: 14px;
+  color: #555;
+}
+
+span {
+  font-size: 16px;
+  font-weight: 500;
+}
