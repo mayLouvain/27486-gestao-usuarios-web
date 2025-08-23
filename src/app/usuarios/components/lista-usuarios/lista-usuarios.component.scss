@@ -1,0 +1,29 @@
+.grid-container {
+  margin: 20px;
+}
+
+.status-ativo {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.status-inativo {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.tabela-container {
+  width: 100%;
+}

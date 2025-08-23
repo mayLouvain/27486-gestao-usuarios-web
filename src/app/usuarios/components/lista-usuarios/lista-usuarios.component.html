@@ -1,0 +1,17 @@
+<div class="toolbar">
+  <div class="spacer"></div>
+
+  <button mat-raised-button color="primary" routerLink="/usuarios/cadastrar">
+    Novo Usuário
+  </button>
+</div>
+
+<section class="tabela-container">
+  <app-tabela-base
+    [dados]="usuarios"
+    [colunas]="colunas"
+    [acoesBotoes]="acoesBotoes"
+    [detalheLinhaAcao]="detalheLinhaAcao"
+  >
+  </app-tabela-base>
+</section>
