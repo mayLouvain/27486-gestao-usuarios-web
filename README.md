@@ -1,27 +1,38 @@
-# TesteTecnicoFrontend
+# Gestão de Usuários - Frontend
+ Frontend do projeto gestão de usuários. Teste técnico 27486. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+Este projeto foi implementado utilizando **Angular 17** e segue boas práticas de organização de código.
 
-## Development server
+## Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Angular 17**  
+- **NVM** para gerenciamento do Node.js (Versão utilizada: 20)  
+- **Angular Material** para estilização das telas  
 
-## Code scaffolding
+## Como Rodar o Projeto
+- npm install para baixar as dependências
+- ng serve ou npm start para iniar a aplicação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Após iniciar a aplicação, acesse:
+  http://localhost:4200/
+  
+## Decisões Técnicas
 
-## Build
+- O projeto segue a organização **Package by Feature**, onde o código é estruturado por domínio.
+- Os domínios do projeto são:  
+  - **Usuários**  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Neste domínio estão localizados os diretórios contendo as  camadas internas, como:  
+  - `controllers`  
+  - `models`  
+  - `services`  
+  - Entre outros componentes específicos do domínio
+- Foram criados componentes reutilizáveis na pasta shared para crud de cada domínio
+- Foi criado um arquivo json com dados , no caminho src/assets/mock-usuarios.json e o service contendo todos métodos crud simulando o retorno de uma API real.
 
-## Running unit tests
+Essa organização facilita a manutenção, escalabilidade e permite que cada feature seja desenvolvida de forma mais independente.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Projeto estático do 
 
-## Running end-to-end tests
+Exemplo da estrutura por domínio:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
