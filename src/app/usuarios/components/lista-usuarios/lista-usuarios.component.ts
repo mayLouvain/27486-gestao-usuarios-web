@@ -1,4 +1,7 @@
-import { DetalheLinhaAcao } from './../../../shared/models/tabela.model';
+import {
+  ColunaTabela,
+  DetalheLinhaAcao,
+} from './../../../shared/models/tabela.model';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/usuarios.service';
@@ -22,7 +25,21 @@ import { MensagemService } from '../../../shared/service/mensagem.service';
 })
 export class ListaUsuariosComponent implements OnInit {
   usuarios: Usuario[] = [];
-  colunas = ['nome', 'email', 'status'];
+  colunas: ColunaTabela[] = [
+    {
+      id: 'nome',
+      nome: 'Nome',
+      pipe: 'nomeFormatado',
+    },
+    {
+      id: 'email',
+      nome: 'E-mail',
+    },
+    {
+      id: 'status',
+      nome: 'Status',
+    },
+  ];
   detalheLinhaAcao: DetalheLinhaAcao = {};
   acoesBotoes: BotaoAcao[] = [];
 
@@ -143,4 +160,5 @@ export class ListaUsuariosComponent implements OnInit {
     };
     return statusColors[status];
   }
+
 }

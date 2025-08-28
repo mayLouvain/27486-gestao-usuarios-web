@@ -107,10 +107,6 @@ export class FormCadastroBaseComponent implements OnInit {
     return false;
   }
 
-  salvar() {
-
-  }
-
   executarAcao(acao: AcaoFormConfig) {
     if (acao.callback) {
       acao.callback(this.form);

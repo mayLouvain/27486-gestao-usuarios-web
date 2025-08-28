@@ -1,4 +1,8 @@
-import { DetalheLinhaAcao } from './../models/tabela.model';
+import {
+  ColunaTabela,
+  DetalheLinhaAcao,
+  TipoPipe,
+} from './../models/tabela.model';
 import {
   AfterViewInit,
   Component,
@@ -20,7 +24,7 @@ import { map, Observable } from 'rxjs';
 })
 export class TabelaBaseComponent implements OnInit, AfterViewInit {
   @Input() dados: any[] = [];
-  @Input() colunas: any[] = [];
+  @Input() colunas: ColunaTabela[] = [];
   @Input() acoesBotoes: BotaoAcao[] = [];
   @Input() detalheLinhaAcao: DetalheLinhaAcao | undefined;
 
@@ -31,7 +35,9 @@ export class TabelaBaseComponent implements OnInit, AfterViewInit {
 
   isMobile$: Observable<boolean>;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+  ) {
     this.isMobile$ = this.breakpointObserver
       .observe([Breakpoints.Handset])
       .pipe(map((result: { matches: any }) => result.matches));
@@ -56,6 +62,9 @@ export class TabelaBaseComponent implements OnInit, AfterViewInit {
   }
 
   get colunasTabelaTela(): string[] {
-    return this.colunas.concat(this.acoesBotoes.length ? ['acoes'] : []);
+    return this.colunas
+      .map((coluna) => coluna.id)
+      .concat(this.acoesBotoes.length ? ['acoes'] : []);
   }
+
 }

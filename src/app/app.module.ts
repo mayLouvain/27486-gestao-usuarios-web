@@ -14,16 +14,16 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule,
     CommonModule,
-    RouterModule,
-    MaterialModule,
-    UsuariosModule,
-    SharedModule,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
+    MaterialModule,
+    RouterModule,
+    UsuariosModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

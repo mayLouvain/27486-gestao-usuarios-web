@@ -2,7 +2,7 @@ import { FormGroup } from '@angular/forms';
 
 export enum Status {
   ATIVO = 'ATIVO',
-  INATIVO = 'INATIVO',
+  INATIVO = 'INATIVO'
 }
 
 export type TipoCampo =
