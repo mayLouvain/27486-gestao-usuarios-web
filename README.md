@@ -32,7 +32,3 @@ Este projeto foi implementado utilizando **Angular 17** e segue boas práticas d
 
 Essa organização facilita a manutenção, escalabilidade e permite que cada feature seja desenvolvida de forma mais independente.
 
-## Projeto estático do 
-
-Exemplo da estrutura por domínio:
-
