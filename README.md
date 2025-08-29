@@ -1,13 +1,21 @@
 # Gestão de Usuários - Frontend
  Frontend do projeto gestão de usuários. Teste técnico 27486. 
 
+Este projeto tem como objetivo realizar a gestão de usuários, permitindo operações essenciais de CRUD:
+
+- Listar Usuários
+
+- Criar e Editar Usuários
+
+- Excluir Usuários
+
 Este projeto foi implementado utilizando **Angular 17** e segue boas práticas de organização de código.
 
 ## Tecnologias Utilizadas
 
-- **Angular 17**  
-- **NVM** para gerenciamento do Node.js (Versão utilizada: 20)  
+- **Angular 17**
 - **Angular Material** para estilização das telas  
+- **NVM** para gerenciamento do Node.js (Versão utilizada: 20)  
 
 ## Como Rodar o Projeto
 - npm install para baixar as dependências
